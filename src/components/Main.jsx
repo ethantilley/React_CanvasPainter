@@ -61,12 +61,17 @@ class Main extends React.Component {
     };
 
     undoChange = () => {
-        this._sketch.undo();
-        
-        this.setState({
-            canUndo: this._sketch.canUndo(),
-            canRedo: this._sketch.canRedo()
-        })
+
+
+            this._sketch.undo();
+            
+            this.setState({
+                canUndo: this._sketch.canUndo(),
+                canRedo: this._sketch.canRedo()
+            })
+          
+
+
     };
 
     redoChange = () => {
@@ -129,19 +134,19 @@ class Main extends React.Component {
         return (
             <div>
                 <div className="canvas-header">
-                    <div className="colour-button" style={styles.swatch} onClick={this.handleClick}>
+                    <button className="undo-button" style={styles.swatch} onClick={this.handleClick}>
                         <div style={styles.color} />
-                    </div>
+                    </button>
                     {
                         this.state.displayColorPicker ? <div style={styles.popover}>
                             <div style={styles.cover} onClick={this.handleClose} />
                             <SketchPicker color={this.state.color} onChange={this.handleChange} />
                         </div> : null
                     }
-                    <button className="undo-button" onClick={this.undoChange}/>
-                    <button className="undo-button" onClick={this.redoChange}/>
-                    <button className="undo-button" onClick={this.clearChanges}/>
-                    <button className="undo-button" onClick={this.saveChanges}/>
+                    <button className="undo-button" onClick={this.undoChange} title="Undo last change!">Undo</button>
+                    <button className="undo-button" onClick={this.redoChange}>Redo</button>
+                    <button className="undo-button" onClick={this.clearChanges}>Clear</button>
+                    <button className="undo-button" onClick={this.saveChanges} style={{cursor: 'not-allowed'}}>Save</button>
                 </div >
                 <SketchField
                     className="canvas"
