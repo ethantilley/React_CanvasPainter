@@ -1,1 +1,34 @@
-# React_CanvasPainter
+## React_CanvasPainter
+Using React.JS, CSS & HTML, I'll be making a canvas painter that allows the used to draw using a varity of colours, undo and save changes.
+
+## Built With
+
+* [JavaScript](https://www.javascript.com/) - Programming language used
+* [CSS](https://www.w3schools.com/css/css_intro.asp) - Programming language used
+* [HTML](https://www.w3schools.com/html/) - Programming language used
+* [React.JS](https://reactjs.org/) - JavaScript library for building user interfaces
+* [React-MDL](https://tleunen.github.io/react-mdl/) - React Components for Material Design Lite
+* [React-Router](https://github.com/ReactTraining/react-router) - Used for website page routing for React
+* [SourceTree](https://www.sourcetreeapp.com/) - Repository softwear paired with github
+* [ATOM](https://atom.io/) - IDE used
+
+## Authors
+
+* **Ethan Tilley** - *Solo Developer* - [@EthanTilley_](https://twitter.com/EthanTilley_)
+
+## Use
+
+todo
+
+## Why
+
+A test application for a job position.
+
+## Goals With This Program
+- [ ] Draw using the cursor.
+- [ ] Change colors.
+- [ ] Display stats: total clicks, new clicks.
+- [ ] Save changes. Drawings persist when app is reloaded.
+- [ ] Change brush size.
+- [ ] Create won colour using hex code and/or color spectrum.
+
