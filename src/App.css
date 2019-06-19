@@ -1,0 +1,37 @@
+.canvas-header {
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  width: 80%;
+  height: 20%;
+
+}
+
+.colour-button {
+  display: flex;
+  overflow: initial;
+  background-color: aqua;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+}
+
+.undo-button {
+  width: 40px;
+  height: 25px;
+  margin-left: 5em;
+}
+
+.canvas {
+  border-style: solid;
+  border-width: 5px;
+  border-color: grey;
+  width: 80%;
+  height: 80%;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  
+ /* margin-top: 5em;*/
+}
+
