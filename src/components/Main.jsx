@@ -1,6 +1,4 @@
-    
-/*eslint no-unused-vars: 0*/
-'use strict';
+   
 
 import reactCSS from 'reactcss'
 import { SketchPicker } from 'react-color'
@@ -41,6 +39,7 @@ class Main extends React.Component {
         originY: 'top'
     };
 
+    
     handleClick = () => {
 
         this.setState({ displayColorPicker: !this.state.displayColorPicker })
@@ -98,6 +97,17 @@ class Main extends React.Component {
         this.setState({drawings: drawings});
     };
 
+    onSketchChange = () => {
+        let prev = this.state.canUndo;
+        let now = this._sketch.canUndo();
+        console.log("test 2");
+
+        if (prev !== now) {
+            console.log("test 1");
+            this.setState({canUndo: now});
+        }
+    };
+
     render() {
 
         const styles = reactCSS({
@@ -143,9 +153,9 @@ class Main extends React.Component {
                             <SketchPicker color={this.state.color} onChange={this.handleChange} />
                         </div> : null
                     }
-                    <button className="undo-button" onClick={this.undoChange} title="Undo last change!">Undo</button>
-                    <button className="undo-button" onClick={this.redoChange}>Redo</button>
-                    <button className="undo-button" onClick={this.clearChanges}>Clear</button>
+                    <button className="undo-button" disabled={!this.state.canUndo} onClick={this.undoChange} title="Undo last change!">Undo</button>
+                    <button className="undo-button" disabled={!this.state.canRedo} onClick={this.redoChange}>Redo</button>
+                    <button className="undo-button" disabled={!this.state.canUndo} onClick={this.clearChanges}>Clear</button>
                     <button className="undo-button" onClick={this.saveChanges} style={{cursor: 'not-allowed'}}>Save</button>
                 </div >
                 <SketchField
@@ -160,7 +170,7 @@ class Main extends React.Component {
                     height={this.state.controlledSize ? this.state.sketchHeight : null}
                     value={controlledValue}
                     forceValue={true}
-                    onChange={this._onSketchChange}
+                    onChange={this.onSketchChange}
                     tool={this.state.tool}
                 />
 
