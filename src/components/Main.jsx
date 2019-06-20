@@ -100,10 +100,8 @@ class Main extends React.Component {
     onSketchChange = () => {
         let prev = this.state.canUndo;
         let now = this._sketch.canUndo();
-        console.log("test 2");
 
         if (prev !== now) {
-            console.log("test 1");
             this.setState({canUndo: now});
         }
     };
@@ -113,17 +111,13 @@ class Main extends React.Component {
         const styles = reactCSS({
             'default': {
                 color: {
-                    width: '36px',
-                    height: '14px',
-                    borderRadius: '2px',
+                  
                     background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
+                
                 },
                 swatch: {
-                    padding: '5px',
-                    background: '#fff',
-                    borderRadius: '1px',
-                    boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
-                    display: 'inline-block',
+                    background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
+
                     cursor: 'pointer',
                 },
                 popover: {
@@ -145,18 +139,46 @@ class Main extends React.Component {
             <div>
                 <div className="canvas-header">
                     <button className="undo-button" style={styles.swatch} onClick={this.handleClick}>
-                        <div style={styles.color} />
+                        <div className="undo-button" style={styles.color} />
                     </button>
                     {
-                        this.state.displayColorPicker ? <div style={styles.popover}>
-                            <div style={styles.cover} onClick={this.handleClose} />
+                        this.state.displayColorPicker ? <div  className="undo-button" style={styles.popover}>
+                            <div  onClick={this.handleClose} />
                             <SketchPicker color={this.state.color} onChange={this.handleChange} />
                         </div> : null
                     }
-                    <button className="undo-button" disabled={!this.state.canUndo} onClick={this.undoChange} title="Undo last change!">Undo</button>
-                    <button className="undo-button" disabled={!this.state.canRedo} onClick={this.redoChange}>Redo</button>
-                    <button className="undo-button" disabled={!this.state.canUndo} onClick={this.clearChanges}>Clear</button>
-                    <button className="undo-button" onClick={this.saveChanges} style={{cursor: 'not-allowed'}}>Save</button>
+                    <button 
+                        className="undo-button" 
+                        style= {{cursor: !this.state.canUndo ? 'not-allowed' : 'pointer'}} 
+                        disabled={!this.state.canUndo} onClick={this.undoChange} 
+                        title="Undo last change!"
+                        >                        
+                        Undo
+                        </button>
+                    <button 
+                        className="undo-button" 
+                        style= {{cursor: !this.state.canRedo ? 'not-allowed' : 'pointer'}} 
+                        disabled={!this.state.canRedo} 
+                        onClick={this.redoChange}
+                        >
+                        Redo
+                        </button>
+                    <button 
+                        className="undo-button" 
+                        style= {{cursor: !this.state.canUndo ? 'not-allowed' : 'pointer'}} 
+                        disabled={!this.state.canUndo} 
+                        onClick={this.clearChanges}
+                        >
+                        Clear
+                        </button>
+                    <button 
+                        className="undo-button" 
+                        onClick={this.saveChanges} 
+                        style= {{cursor: !this.state.canUndo ? 'not-allowed' : 'pointer'}} 
+                        disabled={!this.state.canUndo} 
+                        >
+                        Save
+                        </button>
                 </div >
                 <SketchField
                     className="canvas"
