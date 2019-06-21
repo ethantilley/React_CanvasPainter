@@ -1,7 +1,7 @@
 ## React_CanvasPainter
 Using React.JS, CSS & HTML, I'll be making a canvas painter that allows the used to draw using a varity of colours, undo and save changes.
 
-![alt text](src/DemoCapture.png "Demo of Project")
+![Demo Pic](/src/DemoCapture.PNG "Demo of Project")
 
 ## Built With
 
