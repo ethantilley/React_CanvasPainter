@@ -23,7 +23,7 @@ class Main extends React.Component {
         canUndo: false,
         canRedo: false,
         lineColor: 'black',
-        lineWidth: 10,
+        lineWidth: 80,
         fillColor: '#68CCCA',
         backgroundColor: 'transparent',
         shadowWidth: 0,
