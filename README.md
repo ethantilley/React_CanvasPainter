@@ -1,5 +1,5 @@
 ## React_CanvasPainter
-Using React.JS, CSS & HTML, I'll be making a canvas painter that allows the used to draw using a varity of colours, undo and save changes.
+Using React.JS, CSS & HTML, I'll be making a canvas painter that offers drawing using a varity of colours, clear, undo, redo and save changes.
 
 ![Demo Pic](/src/DemoCapture.PNG "Demo of Project")
 
@@ -24,10 +24,6 @@ Using React.JS, CSS & HTML, I'll be making a canvas painter that allows the used
 * enter: cd c:\etc\ReactJS_CanvasPainter
 * enter: npm start
 * Local browser page should open and application is ready to use.
-
-## Why
-
-A test application for a job position.
 
 ## Goals With This Program
 - [X] Draw using the cursor.
