@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "fabricjs": "^1.0.0",
-    "json": "^9.0.6",
+    "json": "^10.0.0",
     "pg": "^7.11.0",
     "pg-native": "^3.0.0",
     "prop-types": "^15.7.2",
