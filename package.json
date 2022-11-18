@@ -12,7 +12,7 @@
     "react-color": "^2.17.3",
     "react-dom": "^16.8.6",
     "react-painter": "^0.3.6",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-sketch": "^0.5.1",
     "reactcss": "^1.2.3"
   },
